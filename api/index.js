@@ -14,6 +14,7 @@ const LIGHT_CONTA = "https://www.light.com.br/SitePages/page-entenda-a-conta-da-
 function data(req) {
   const host = req.get("host") || "seu-projeto.vercel.app";
   const protocol = req.headers["x-forwarded-proto"] || "https";
+
   return {
     siteUrl: `${protocol}://${host}`,
     lightOficial: LIGHT_OFICIAL,
@@ -23,9 +24,26 @@ function data(req) {
 }
 
 app.get("/", (req, res) => res.render("index", data(req)));
-app.get("/segunda-via", (req, res) => res.render("segunda-via", data(req)));
-app.get("/fatura", (req, res) => res.render("fatura", data(req)));
 
+// URLs oficiais
+app.get("/light-segunda-via", (req, res) =>
+  res.render("segunda-via", data(req))
+);
+
+app.get("/light-fatura", (req, res) =>
+  res.render("fatura", data(req))
+);
+
+// Redirecionamento das URLs antigas para as novas
+app.get("/segunda-via", (req, res) =>
+  res.redirect(301, "/light-segunda-via")
+);
+
+app.get("/fatura", (req, res) =>
+  res.redirect(301, "/light-fatura")
+);
+
+// Robots.txt
 app.get("/robots.txt", (req, res) => {
   res.type("text/plain").send(
 `User-agent: *
@@ -35,14 +53,16 @@ Sitemap: ${data(req).siteUrl}/sitemap.xml`
   );
 });
 
+// Sitemap
 app.get("/sitemap.xml", (req, res) => {
   const siteUrl = data(req).siteUrl;
+
   res.type("application/xml").send(
 `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>${siteUrl}/</loc></url>
-  <url><loc>${siteUrl}/segunda-via</loc></url>
-  <url><loc>${siteUrl}/fatura</loc></url>
+  <url><loc>${siteUrl}/light-segunda-via</loc></url>
+  <url><loc>${siteUrl}/light-fatura</loc></url>
 </urlset>`
   );
 });
