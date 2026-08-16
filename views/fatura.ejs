@@ -1,3 +1,4 @@
+```html
 <!doctype html>
 <html lang="pt-BR">
 <head>
@@ -6,12 +7,37 @@
 
 <link rel="icon" type="image/png" href="/favicon.png">
 
-<title>Light Fatura | Informações sobre a Conta</title>
+<title>Light fatura: conta de energia e informações</title>
 
-<meta name="description" content="Light fatura: informações para entender sua conta de energia e acessar os canais oficiais da Light.">
+<meta
+  name="description"
+  content="Light fatura: veja informações sobre a conta de energia, cobrança, vencimento e acesso aos canais oficiais da Light."
+>
+
+<meta name="robots" content="index,follow">
 
 <link rel="canonical" href="<%= siteUrl %>/light-fatura">
+
 <link rel="stylesheet" href="/css/style.css">
+
+<meta property="og:title" content="Light fatura: conta de energia e informações">
+<meta
+  property="og:description"
+  content="Informações sobre a fatura e a conta de energia da Light, com acesso aos canais oficiais."
+>
+<meta property="og:type" content="website">
+<meta property="og:url" content="<%= siteUrl %>/light-fatura">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Light fatura: conta de energia e informações",
+  "url": "<%= siteUrl %>/light-fatura",
+  "description": "Informações sobre a fatura e a conta de energia da Light."
+}
+</script>
+
 </head>
 
 <body>
@@ -19,9 +45,15 @@
 <header class="header">
 <div class="container nav">
 
-<a class="logo" href="/">Light</a>
+<a
+  class="logo"
+  href="/"
+  aria-label="Light — página inicial"
+>
+Light
+</a>
 
-<nav>
+<nav aria-label="Navegação principal">
 <a href="/">Light</a>
 <a href="/light-segunda-via">Light segunda via</a>
 <a href="/light-fatura">Light fatura</a>
@@ -30,43 +62,60 @@
 </div>
 </header>
 
+
 <main>
 
 <section class="page">
 <div class="container narrow">
 
-<span class="tag">Informações</span>
+<span class="tag">Informações sobre a conta</span>
 
-<h1>Light Fatura</h1>
+<h1>Light fatura e conta de energia</h1>
 
 <p>
-A fatura reúne informações relacionadas ao consumo e à cobrança de energia. A Light disponibiliza conteúdo oficial para ajudar o cliente a entender a conta.
+A fatura da Light reúne informações importantes sobre a conta de energia,
+como valores cobrados, consumo, vencimento e outros dados relacionados
+ao fornecimento de energia.
 </p>
 
+<p>
+Se você precisa entender uma cobrança ou consultar informações da sua
+conta, utilize os canais oficiais da Light para acessar os dados
+atualizados da sua unidade consumidora.
+</p>
+
+
+<div class="actions">
+
 <a
-class="btn primary"
-href="<%= lightConta %>"
-target="_blank"
-rel="noopener noreferrer"
+  class="btn primary"
+  href="<%= lightConta %>"
+  target="_blank"
+  rel="noopener noreferrer"
 >
 Entender sua conta — Light
 </a>
 
 <a
-class="btn secondary"
-href="<%= lightOficial %>"
-target="_blank"
-rel="noopener noreferrer"
+  class="btn secondary"
+  href="<%= lightOficial %>"
+  target="_blank"
+  rel="noopener noreferrer"
 >
 Site oficial da Light
 </a>
+
+</div>
+
 
 <div class="notice">
 
 <strong>Importante</strong>
 
 <p>
-Para consultar dados pessoais, emitir documentos ou realizar serviços, use diretamente os canais oficiais da Light.
+Esta é uma página informativa independente. Para consultar dados pessoais,
+emitir documentos, consultar débitos ou realizar qualquer serviço
+relacionado à sua conta, utilize diretamente os canais oficiais da Light.
 </p>
 
 </div>
@@ -74,7 +123,203 @@ Para consultar dados pessoais, emitir documentos ou realizar serviços, use dire
 </div>
 </section>
 
+
+<section class="section">
+<div class="container narrow">
+
+<h2>Informações sobre a fatura Light</h2>
+
+<p>
+A fatura de energia apresenta informações utilizadas para identificar
+a cobrança e o período de consumo. Os detalhes podem variar conforme
+a conta e os serviços contratados.
+</p>
+
+<div class="grid">
+
+<article class="card">
+
+<h3>Valor da conta</h3>
+
+<p>
+Confira o valor apresentado na fatura e, para informações específicas
+sobre a cobrança, consulte diretamente a sua conta nos canais oficiais.
+</p>
+
+</article>
+
+
+<article class="card">
+
+<h3>Vencimento</h3>
+
+<p>
+A data de vencimento é uma das informações importantes da conta.
+Consulte sempre a fatura mais recente para verificar a data correta.
+</p>
+
+</article>
+
+
+<article class="card">
+
+<h3>Consumo de energia</h3>
+
+<p>
+A fatura apresenta informações relacionadas ao consumo de energia do
+período correspondente à cobrança.
+</p>
+
+</article>
+
+</div>
+
+</div>
+</section>
+
+
+<section class="section soft">
+<div class="container narrow">
+
+<h2>Precisa da segunda via da Light?</h2>
+
+<p>
+Se o que você procura é a segunda via da conta, temos uma página
+específica com informações sobre esse assunto e acesso ao canal oficial
+da Light.
+</p>
+
+<a
+  class="btn primary"
+  href="/light-segunda-via"
+>
+Ver informações sobre Light segunda via
+</a>
+
+</div>
+</section>
+
+
+<section class="section">
+<div class="container narrow">
+
+<h2>Como consultar sua conta Light</h2>
+
+<p>
+Para consultar informações atualizadas da sua conta, o caminho mais
+seguro é utilizar diretamente os canais oficiais da Light.
+</p>
+
+<div class="links">
+
+<a
+  href="<%= lightConta %>"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+Informações sobre sua conta
+</a>
+
+<a
+  href="<%= lightAtendimento %>"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+Atendimento Light
+</a>
+
+<a
+  href="<%= lightOficial %>"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+Site oficial da Light
+</a>
+
+</div>
+
+</div>
+</section>
+
+
+<section class="section soft">
+<div class="container narrow">
+
+<h2>Dúvidas sobre a fatura Light</h2>
+
+<h3>Onde consultar informações da minha fatura?</h3>
+
+<p>
+Para consultar dados atualizados da sua conta, utilize o canal oficial
+da Light indicado nesta página.
+</p>
+
+
+<h3>Preciso da segunda via da conta Light. O que fazer?</h3>
+
+<p>
+Acesse a página de informações sobre
+<a href="/light-segunda-via">Light segunda via</a>
+para encontrar orientações e o acesso ao canal oficial.
+</p>
+
+
+<h3>Posso consultar minha conta por este site?</h3>
+
+<p>
+Este site é informativo e não possui acesso aos dados pessoais dos
+clientes. Para consultar sua conta ou realizar serviços, utilize
+diretamente os canais oficiais da Light.
+</p>
+
+</div>
+</section>
+
+
+<section class="section">
+<div class="container narrow">
+
+<h2>Canais oficiais da Light</h2>
+
+<p>
+Para serviços que exigem identificação, consulta de dados pessoais,
+emissão de documentos ou atendimento ao cliente, utilize os canais
+oficiais da Light.
+</p>
+
+<div class="links">
+
+<a
+  href="<%= lightOficial %>"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+Site oficial da Light
+</a>
+
+<a
+  href="<%= lightAtendimento %>"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+Atendimento Light
+</a>
+
+<a
+  href="<%= lightConta %>"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+Entenda sua conta
+</a>
+
+</div>
+
+</div>
+</section>
+
 </main>
+
 
 <footer>
 <div class="container">
@@ -85,8 +330,20 @@ Para consultar dados pessoais, emitir documentos ou realizar serviços, use dire
 Site informativo independente. Não somos o site oficial da Light.
 </p>
 
+<p>
+Para serviços e informações pessoais, utilize os canais oficiais da Light.
+</p>
+
+<p>
+© <span id="year"></span> Todos os direitos reservados.
+</p>
+
 </div>
 </footer>
 
+
+<script src="/js/app.js"></script>
+
 </body>
 </html>
+```
